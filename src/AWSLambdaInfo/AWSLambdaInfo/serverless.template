@@ -8,7 +8,7 @@
     "Get" : {
       "Type" : "AWS::Serverless::Function",
       "Properties": {
-        "Handler": "AWSLambdaInfo::AWSLambdaInfo.Functions::Get",
+        "Handler": "AWSLambdaInfo::AWSLambdaInfo.Assemblies::Get",
         "Runtime": "dotnetcore2.1",
         "CodeUri": "",
         "MemorySize": 256,
