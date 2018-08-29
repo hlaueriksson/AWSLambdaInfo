@@ -7,6 +7,9 @@
 Get information about available:
 
 * `Assemblies` and their version
+* `Types` and what `Assembly` they belong to
+
+The information gathered are from the `dotnetcore2.1` runtime version.
 
 This project was created with [AWS Toolkit for Visual Studio](https://aws.amazon.com/visualstudio/)
 
@@ -14,7 +17,7 @@ This project was created with [AWS Toolkit for Visual Studio](https://aws.amazon
 
 > Get information about available `Assemblies` and their version
 
-* https://j3uf3rsgd4.execute-api.eu-central-1.amazonaws.com/Prod (`dotnetcore2.1`)
+* https://j3uf3rsgd4.execute-api.eu-central-1.amazonaws.com/Prod/Assemblies
 
 > 30 assemblies found
 
@@ -49,5 +52,48 @@ This project was created with [AWS Toolkit for Visual Studio](https://aws.amazon
     "System.Text.RegularExpressions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
     "System.Threading, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
     "System.Xml.XDocument, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+]
+```
+
+## Type
+
+> Get information about available `Types` and what `Assembly` they belong to
+
+### FullName
+
+Query by:
+
+> The fully qualified name of the type, including its namespace but not its assembly
+
+* https://j3uf3rsgd4.execute-api.eu-central-1.amazonaws.com/Prod/Type?FullName={FullName}
+
+Example: https://j3uf3rsgd4.execute-api.eu-central-1.amazonaws.com/Prod/Type?FullName=Amazon.Lambda.Serialization.Json.JsonSerializer
+
+> Amazon.Lambda.Serialization.Json.JsonSerializer was found in 1 assemblies
+
+```json
+[
+    "Amazon.Lambda.Serialization.Json, Version=1.0.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604"
+]
+```
+
+### Name
+
+Query by:
+
+> The simple name of the type
+
+* https://j3uf3rsgd4.execute-api.eu-central-1.amazonaws.com/Prod/Type?Name={Name}
+
+Example: https://j3uf3rsgd4.execute-api.eu-central-1.amazonaws.com/Prod/Type?Name=ILambdaContext
+
+> ILambdaContext matched 1 types
+
+```json
+[
+    {
+        "Type": "Amazon.Lambda.Core.ILambdaContext",
+        "Assembly": "Amazon.Lambda.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604"
+    }
 ]
 ```
