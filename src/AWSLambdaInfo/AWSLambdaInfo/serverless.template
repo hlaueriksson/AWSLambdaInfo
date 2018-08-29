@@ -5,7 +5,7 @@
 
   "Resources" : {
 
-    "Get" : {
+    "Assemblies" : {
       "Type" : "AWS::Serverless::Function",
       "Properties": {
         "Handler": "AWSLambdaInfo::AWSLambdaInfo.Assemblies::Get",
@@ -19,7 +19,28 @@
           "PutResource": {
             "Type": "Api",
             "Properties": {
-              "Path": "/",
+              "Path": "/Assemblies",
+              "Method": "GET"
+            }
+          }
+        }
+      }
+    },
+    "Type" : {
+      "Type" : "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "AWSLambdaInfo::AWSLambdaInfo.Type::Get",
+        "Runtime": "dotnetcore2.1",
+        "CodeUri": "",
+        "MemorySize": 256,
+        "Timeout": 30,
+        "Role": null,
+        "Policies": [ "AWSLambdaBasicExecutionRole" ],
+        "Events": {
+          "PutResource": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/Type",
               "Method": "GET"
             }
           }
