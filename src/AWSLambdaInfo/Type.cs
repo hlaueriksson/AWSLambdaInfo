@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Text.Json;
 using Amazon.Lambda.APIGatewayEvents;
 using Amazon.Lambda.Core;
-using Newtonsoft.Json;
 
 namespace AWSLambdaInfo
 {
@@ -64,7 +64,7 @@ namespace AWSLambdaInfo
             return new APIGatewayProxyResponse
             {
                 StatusCode = (int)HttpStatusCode.OK,
-                Body = JsonConvert.SerializeObject(result),
+                Body = JsonSerializer.Serialize(result),
                 Headers = new Dictionary<string, string> { { "Content-Type", "application/json" } }
             };
         }
