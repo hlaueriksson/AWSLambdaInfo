@@ -1,6 +1,6 @@
 # AWSLambdaInfo
 
-[![Build Status](https://img.shields.io/appveyor/ci/hlaueriksson/awslambdainfo.svg?style=flat-square)](https://ci.appveyor.com/project/hlaueriksson/awslambdainfo)
+[![build](https://github.com/hlaueriksson/AWSLambdaInfo/actions/workflows/build.yml/badge.svg)](https://github.com/hlaueriksson/AWSLambdaInfo/actions/workflows/build.yml)
 
 > Information gathered on AWS Lambda by executing AWS Lambda
 
