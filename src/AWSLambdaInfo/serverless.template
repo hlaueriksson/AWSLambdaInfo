@@ -3,11 +3,14 @@
   "Transform": "AWS::Serverless-2016-10-31",
   "Description": "An AWS Serverless Application.",
   "Resources": {
-    "Assemblies" : {
-      "Type" : "AWS::Serverless::Function",
+    "Assemblies": {
+      "Type": "AWS::Serverless::Function",
       "Properties": {
+        "Architectures": [
+          "x86_64"
+        ],
         "Handler": "AWSLambdaInfo::AWSLambdaInfo.Assemblies::Get",
-        "Runtime": "dotnetcore3.1",
+        "Runtime": "dotnet6",
         "CodeUri": "",
         "MemorySize": 256,
         "Timeout": 30,
@@ -26,11 +29,14 @@
         }
       }
     },
-    "Type" : {
-      "Type" : "AWS::Serverless::Function",
+    "Type": {
+      "Type": "AWS::Serverless::Function",
       "Properties": {
+        "Architectures": [
+          "x86_64"
+        ],
         "Handler": "AWSLambdaInfo::AWSLambdaInfo.Type::Get",
-        "Runtime": "dotnetcore3.1",
+        "Runtime": "dotnet6",
         "CodeUri": "",
         "MemorySize": 256,
         "Timeout": 30,
