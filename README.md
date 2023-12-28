@@ -19,18 +19,20 @@ This project was created with [AWS Toolkit for Visual Studio](https://aws.amazon
 
 * https://j3uf3rsgd4.execute-api.eu-central-1.amazonaws.com/Prod/Assemblies
 
-> 38 assemblies found
-
 ```json
 [
+    "Amazon.Lambda.Annotations, Version=1.1.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604",
     "Amazon.Lambda.APIGatewayEvents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604",
     "Amazon.Lambda.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604",
-    "Amazon.Lambda.RuntimeSupport, Version=1.7.0.0, Culture=neutral, PublicKeyToken=null",
+    "Amazon.Lambda.RuntimeSupport, Version=1.9.1.0, Culture=neutral, PublicKeyToken=null",
     "Amazon.Lambda.Serialization.SystemTextJson, Version=0.0.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604",
     "Anonymously Hosted DynamicMethods Assembly, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "Microsoft.Extensions.DependencyInjection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60",
+    "Microsoft.Extensions.DependencyInjection.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60",
     "Microsoft.Win32.Primitives, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
     "System.Collections, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
     "System.Collections.Concurrent, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
+    "System.ComponentModel, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
     "System.Console, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
     "System.Diagnostics.DiagnosticSource, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51",
     "System.Diagnostics.Tracing, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a",
@@ -64,7 +66,7 @@ This project was created with [AWS Toolkit for Visual Studio](https://aws.amazon
 ]
 ```
 
-## Type
+## Types
 
 > Get information about available `Types` and what `Assembly` they belong to
 
@@ -74,11 +76,7 @@ Query by:
 
 > The fully qualified name of the type, including its namespace but not its assembly
 
-* https://j3uf3rsgd4.execute-api.eu-central-1.amazonaws.com/Prod/Type?FullName={FullName}
-
-Example: https://j3uf3rsgd4.execute-api.eu-central-1.amazonaws.com/Prod/Type?FullName=Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer
-
-> Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer was found in 1 assemblies
+* https://j3uf3rsgd4.execute-api.eu-central-1.amazonaws.com/Prod/Types?FullName=Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer
 
 ```json
 [
@@ -92,11 +90,7 @@ Query by:
 
 > The simple name of the type
 
-* https://j3uf3rsgd4.execute-api.eu-central-1.amazonaws.com/Prod/Type?Name={Name}
-
-Example: https://j3uf3rsgd4.execute-api.eu-central-1.amazonaws.com/Prod/Type?Name=ILambdaContext
-
-> ILambdaContext matched 1 types
+* https://j3uf3rsgd4.execute-api.eu-central-1.amazonaws.com/Prod/Types?Name=ILambdaContext
 
 ```json
 [
