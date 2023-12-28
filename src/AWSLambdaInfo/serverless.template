@@ -1,23 +1,26 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
   "Transform": "AWS::Serverless-2016-10-31",
-  "Description": "An AWS Serverless Application.",
+  "Description": "An AWS Serverless Application. This template is partially managed by Amazon.Lambda.Annotations (v1.0.0.0).",
   "Resources": {
-    "Assemblies": {
+    "AWSLambdaInfoAssembliesGetGenerated": {
       "Type": "AWS::Serverless::Function",
+      "Metadata": {
+        "Tool": "Amazon.Lambda.Annotations",
+        "SyncedEvents": [
+          "RootGet"
+        ]
+      },
       "Properties": {
-        "Architectures": [
-          "x86_64"
-        ],
-        "Handler": "AWSLambdaInfo::AWSLambdaInfo.Assemblies::Get",
         "Runtime": "dotnet6",
-        "CodeUri": "",
+        "CodeUri": ".",
         "MemorySize": 256,
         "Timeout": 30,
-        "Role": null,
         "Policies": [
           "AWSLambdaBasicExecutionRole"
         ],
+        "PackageType": "Zip",
+        "Handler": "AWSLambdaInfo::AWSLambdaInfo.Assemblies_Get_Generated::Get",
         "Events": {
           "RootGet": {
             "Type": "Api",
@@ -29,26 +32,29 @@
         }
       }
     },
-    "Type": {
+    "AWSLambdaInfoTypesGetGenerated": {
       "Type": "AWS::Serverless::Function",
+      "Metadata": {
+        "Tool": "Amazon.Lambda.Annotations",
+        "SyncedEvents": [
+          "RootGet"
+        ]
+      },
       "Properties": {
-        "Architectures": [
-          "x86_64"
-        ],
-        "Handler": "AWSLambdaInfo::AWSLambdaInfo.Type::Get",
         "Runtime": "dotnet6",
-        "CodeUri": "",
+        "CodeUri": ".",
         "MemorySize": 256,
         "Timeout": 30,
-        "Role": null,
         "Policies": [
           "AWSLambdaBasicExecutionRole"
         ],
+        "PackageType": "Zip",
+        "Handler": "AWSLambdaInfo::AWSLambdaInfo.Types_Get_Generated::Get",
         "Events": {
           "RootGet": {
             "Type": "Api",
             "Properties": {
-              "Path": "/Type",
+              "Path": "/Types",
               "Method": "GET"
             }
           }
