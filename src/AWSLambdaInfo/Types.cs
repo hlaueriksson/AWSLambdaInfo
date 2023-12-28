@@ -1,5 +1,5 @@
-using Amazon.Lambda.Annotations.APIGateway;
 using Amazon.Lambda.Annotations;
+using Amazon.Lambda.Annotations.APIGateway;
 using Amazon.Lambda.APIGatewayEvents;
 using Amazon.Lambda.Core;
 
@@ -56,26 +56,24 @@ public class Types
     }
 }
 
-internal static class Extensions
+internal static class EnumerableExtensions
 {
     internal static IEnumerable<T> SkipExceptions<T>(this IEnumerable<T> values)
     {
-        using (var enumerator = values.GetEnumerator())
+        using var enumerator = values.GetEnumerator();
+        var next = true;
+        while (next)
         {
-            var next = true;
-            while (next)
+            try
             {
-                try
-                {
-                    next = enumerator.MoveNext();
-                }
-                catch
-                {
-                    continue;
-                }
-
-                if (next) yield return enumerator.Current;
+                next = enumerator.MoveNext();
             }
+            catch
+            {
+                continue;
+            }
+
+            if (next) yield return enumerator.Current;
         }
     }
 }
